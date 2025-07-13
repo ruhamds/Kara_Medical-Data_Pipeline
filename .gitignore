@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+myenv/
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# Secrets
+*.env
+*.session
+
+# Data - exclude large media, allow json
+data/**/*.jpg
+data/**/*.mp4
+data/**/*.webp
+
+# Dagster
+dagster_logs/
+dagster_home/
+
+# DBT compiled targets
+dbt_packages/
+target/
+
+# System
+.DS_Store
+Thumbs.db

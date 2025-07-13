@@ -1,0 +1,36 @@
+# Sensitive config
+- .env
++ # .env is required at build time for Docker Compose to load it into the container
+
+
+# Data lake (raw and processed)
+data/
+!data/README.md  # <-- Optional: keep structure but not the content
+
+# Log files
+logs/
+*.log
+
+# Python cache & compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# dbt build artifacts (to avoid bloat)
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+
+# Git internals (not needed in image)
+.git/
+.gitignore
+
+# VSCode & editor junk
+*.swp
+*.tmp
+.vscode/
+*.ipynb_checkpoints/
+
+# Docker internals (optional)
+.docker/

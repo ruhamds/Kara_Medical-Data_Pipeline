@@ -1,0 +1,18 @@
+# Core Python deps
+telethon==1.36.0
+psycopg2-binary==2.9.9
+python-dotenv==1.0.1
+pydantic==2.7.4
+
+# Data stack
+dbt-postgres==1.8.2
+dagster==1.7.14
+dagster-webserver==1.7.14
+
+# API
+fastapi==0.111.0
+uvicorn==0.30.1
+
+# YOLO (CPU version only)
+torch==2.3.0+cpu
+ultralytics==8.2.48
