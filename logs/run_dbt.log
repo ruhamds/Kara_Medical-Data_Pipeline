@@ -1,0 +1,103 @@
+2025-07-13 20:20:40,864 - INFO - Changed working directory to C:\Users\Antifragile\Desktop\Kara_Medical Data_Pipeline\kara_dbt
+2025-07-13 20:20:55,150 - INFO - 17:20:55  Running with dbt=1.9.0-b4
+2025-07-13 20:20:57,715 - INFO - 17:20:57  Registered adapter: postgres=1.8.2
+2025-07-13 20:21:00,335 - INFO - 17:21:00  Found 4 models, 428 macros
+2025-07-13 20:21:00,383 - INFO - 17:21:00
+2025-07-13 20:21:00,386 - INFO - 17:21:00  Concurrency: 1 threads (target='dev')
+2025-07-13 20:21:00,400 - INFO - 17:21:00
+2025-07-13 20:21:02,248 - INFO - 17:21:02  1 of 4 START sql view model public.stg_telegram_messages ....................... [RUN]
+2025-07-13 20:59:42,886 - INFO - Changed working directory to C:\Users\Antifragile\Desktop\Kara_Medical Data_Pipeline\kara_dbt
+2025-07-13 20:59:58,188 - INFO - 17:59:58  Running with dbt=1.9.0-b4
+2025-07-13 20:59:59,922 - INFO - 17:59:59  Registered adapter: postgres=1.8.2
+2025-07-13 21:00:10,903 - INFO - 18:00:10  Found 4 models, 428 macros
+2025-07-13 21:00:10,919 - INFO - 18:00:10
+2025-07-13 21:00:10,920 - INFO - 18:00:10  Concurrency: 1 threads (target='dev')
+2025-07-13 21:00:10,920 - INFO - 18:00:10
+2025-07-13 21:00:29,721 - INFO - 18:00:29
+2025-07-13 21:00:29,721 - INFO - 18:00:29  Finished running  in 0 hours 0 minutes and 18.80 seconds (18.80s).
+2025-07-13 21:00:29,721 - INFO - 18:00:29  Encountered an error:
+2025-07-13 21:00:29,721 - INFO - Database Error
+2025-07-13 21:00:29,732 - INFO - connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+2025-07-13 21:00:29,732 - INFO - Is the server running on that host and accepting TCP/IP connections?
+2025-07-13 21:00:29,733 - INFO - connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+2025-07-13 21:00:29,733 - INFO - Is the server running on that host and accepting TCP/IP connections?
+2025-07-13 21:00:29,733 - INFO - 
+2025-07-13 21:00:40,513 - ERROR - Error running dbt: \u274c dbt run failed
+2025-07-13 21:00:40,515 - INFO - Returned to original directory
+2025-07-13 21:08:36,830 - INFO - Changed working directory to C:\Users\Antifragile\Desktop\Kara_Medical Data_Pipeline\kara_dbt
+2025-07-13 21:08:47,347 - INFO - 18:08:47  Running with dbt=1.9.0-b4
+2025-07-13 21:08:48,621 - INFO - 18:08:48  Registered adapter: postgres=1.8.2
+2025-07-13 21:08:53,954 - INFO - 18:08:53  Found 4 models, 428 macros
+2025-07-13 21:08:53,956 - INFO - 18:08:53
+2025-07-13 21:08:53,963 - INFO - 18:08:53  Concurrency: 1 threads (target='dev')
+2025-07-13 21:08:53,965 - INFO - 18:08:53
+2025-07-13 21:09:10,184 - INFO - 18:09:10
+2025-07-13 21:09:10,185 - INFO - 18:09:10  Finished running  in 0 hours 0 minutes and 16.21 seconds (16.21s).
+2025-07-13 21:09:10,187 - INFO - 18:09:10  Encountered an error:
+2025-07-13 21:09:10,187 - INFO - Database Error
+2025-07-13 21:09:10,189 - INFO - connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+2025-07-13 21:09:10,189 - INFO - Is the server running on that host and accepting TCP/IP connections?
+2025-07-13 21:09:10,194 - INFO - connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+2025-07-13 21:09:10,196 - INFO - Is the server running on that host and accepting TCP/IP connections?
+2025-07-13 21:09:10,197 - INFO - 
+2025-07-13 21:09:14,641 - ERROR - Error running dbt: \u274c dbt run failed
+2025-07-13 21:09:14,644 - INFO - Returned to original directory
+2025-07-13 21:30:23,694 - INFO - Changed working directory to C:\Users\Antifragile\Desktop\Kara_Medical Data_Pipeline\kara_dbt
+2025-07-13 21:30:32,634 - INFO - 18:30:32  Running with dbt=1.9.0-b4
+2025-07-13 21:30:34,847 - INFO - 18:30:34  Registered adapter: postgres=1.8.2
+2025-07-13 21:30:37,485 - INFO - 18:30:37  Found 4 models, 428 macros
+2025-07-13 21:30:37,492 - INFO - 18:30:37
+2025-07-13 21:30:37,497 - INFO - 18:30:37  Concurrency: 1 threads (target='dev')
+2025-07-13 21:30:37,499 - INFO - 18:30:37
+2025-07-13 21:30:38,464 - INFO - 18:30:38  1 of 4 START sql view model public.stg_telegram_messages ....................... [RUN]
+2025-07-13 21:30:38,993 - INFO - 18:30:38  1 of 4 OK created sql view model public.stg_telegram_messages .................. [CREATE VIEW in 0.52s]
+2025-07-13 21:30:39,004 - INFO - 18:30:39  2 of 4 START sql table model public.dim_channels ............................... [RUN]
+2025-07-13 21:30:39,357 - INFO - 18:30:39  2 of 4 OK created sql table model public.dim_channels .......................... [SELECT 100 in 0.35s]
+2025-07-13 21:30:39,365 - INFO - 18:30:39  3 of 4 START sql table model public.dim_dates .................................. [RUN]
+2025-07-13 21:30:39,595 - INFO - 18:30:39  3 of 4 OK created sql table model public.dim_dates ............................. [SELECT 10 in 0.22s]
+2025-07-13 21:30:39,608 - INFO - 18:30:39  4 of 4 START sql table model public.fct_messages ............................... [RUN]
+2025-07-13 21:30:40,269 - INFO - 18:30:40  4 of 4 ERROR creating sql table model public.fct_messages ...................... [ERROR in 0.65s]
+2025-07-13 21:30:40,417 - INFO - 18:30:40
+2025-07-13 21:30:40,418 - INFO - 18:30:40  Finished running 3 table models, 1 view model in 0 hours 0 minutes and 2.91 seconds (2.91s).
+2025-07-13 21:30:40,685 - INFO - 18:30:40
+2025-07-13 21:30:40,694 - INFO - 18:30:40  Completed with 1 error, 0 partial successs, and 0 warnings:
+2025-07-13 21:30:40,695 - INFO - 18:30:40
+2025-07-13 21:30:40,714 - INFO - 18:30:40    Database Error in model fct_messages (models\marts\fct_messages.sql)
+2025-07-13 21:30:40,719 - INFO - column m.text_length does not exist
+2025-07-13 21:30:40,732 - INFO - LINE 21:     m.text_length,
+2025-07-13 21:30:40,747 - INFO - ^
+2025-07-13 21:30:40,754 - INFO - compiled code at target\run\kara_dbt\models\marts\fct_messages.sql
+2025-07-13 21:30:40,771 - INFO - 18:30:40
+2025-07-13 21:30:40,781 - INFO - 18:30:40  Done. PASS=3 WARN=0 ERROR=1 SKIP=0 TOTAL=4
+2025-07-13 21:30:43,411 - ERROR - Error running dbt: \u274c dbt run failed
+2025-07-13 21:30:43,412 - INFO - Returned to original directory
+2025-07-13 21:35:30,275 - INFO - Changed working directory to C:\Users\Antifragile\Desktop\Kara_Medical Data_Pipeline\kara_dbt
+2025-07-13 21:35:38,797 - INFO - 18:35:38  Running with dbt=1.9.0-b4
+2025-07-13 21:35:41,090 - INFO - 18:35:41  Registered adapter: postgres=1.8.2
+2025-07-13 21:35:45,111 - INFO - 18:35:45  Encountered an error:
+2025-07-13 21:35:45,112 - INFO - Compilation Error
+2025-07-13 21:35:45,113 - INFO - Model 'model.kara_dbt.stg_telegram_messages' (models\staging\stg_telegram_messages.sql) depends on a source named 'raw.telegram_messages' which was not found
+2025-07-13 21:35:47,696 - ERROR - Error running dbt: \u274c dbt run failed
+2025-07-13 21:35:47,698 - INFO - Returned to original directory
+2025-07-13 21:38:31,389 - INFO - Changed working directory to C:\Users\Antifragile\Desktop\Kara_Medical Data_Pipeline\kara_dbt
+2025-07-13 21:38:41,444 - INFO - 18:38:41  Running with dbt=1.9.0-b4
+2025-07-13 21:38:44,870 - INFO - 18:38:44  Registered adapter: postgres=1.8.2
+2025-07-13 21:38:53,502 - INFO - 18:38:53  Found 4 models, 1 source, 428 macros
+2025-07-13 21:38:53,541 - INFO - 18:38:53
+2025-07-13 21:38:53,542 - INFO - 18:38:53  Concurrency: 1 threads (target='dev')
+2025-07-13 21:38:53,543 - INFO - 18:38:53
+2025-07-13 21:38:54,506 - INFO - 18:38:54  1 of 4 START sql view model public.stg_telegram_messages ....................... [RUN]
+2025-07-13 21:38:55,659 - INFO - 18:38:55  1 of 4 OK created sql view model public.stg_telegram_messages .................. [CREATE VIEW in 0.94s]
+2025-07-13 21:38:55,667 - INFO - 18:38:55  2 of 4 START sql table model public.dim_channels ............................... [RUN]
+2025-07-13 21:38:56,339 - INFO - 18:38:56  2 of 4 OK created sql table model public.dim_channels .......................... [SELECT 6791 in 0.68s]
+2025-07-13 21:38:56,352 - INFO - 18:38:56  3 of 4 START sql table model public.dim_dates .................................. [RUN]
+2025-07-13 21:38:56,786 - INFO - 18:38:56  3 of 4 OK created sql table model public.dim_dates ............................. [SELECT 224 in 0.42s]
+2025-07-13 21:38:56,798 - INFO - 18:38:56  4 of 4 START sql table model public.fct_messages ............................... [RUN]
+2025-07-13 22:00:10,248 - INFO - 19:00:10  4 of 4 OK created sql table model public.fct_messages .......................... [SELECT 28194853 in 1273.34s]
+2025-07-13 22:00:10,415 - INFO - 19:00:10
+2025-07-13 22:00:10,416 - INFO - 19:00:10  Finished running 3 table models, 1 view model in 0 hours 21 minutes and 16.89 seconds (1276.89s).
+2025-07-13 22:00:10,832 - INFO - 19:00:10
+2025-07-13 22:00:10,833 - INFO - 19:00:10  Completed successfully
+2025-07-13 22:00:10,834 - INFO - 19:00:10
+2025-07-13 22:00:10,835 - INFO - 19:00:10  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+2025-07-13 22:00:26,085 - INFO - Returned to original directory
