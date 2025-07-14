@@ -50,51 +50,48 @@ This project delivers an end-to-end data pipeline for analyzing Ethiopian medica
 
 ## 📂 Project Structure
 
-Kara_Medical_Data_Pipeline/
+Kara_Medical-Data_Pipeline/
 │
-├── data/                               # Raw and sample Telegram message data
+├── data/                          # Raw and sample Telegram message data
 │   └── raw/
 │       └── telegram_messages/
 │           └── 2025-07-12/
-│               ├── lobelia4cosmetics/     # Sample scraped messages from Lobelia
+│               ├── lobelia4cosmetics/
 │               │   └── messages.json
-│               ├── tikvahpharma/          # Sample scraped messages from Tikvah Pharma
+│               ├── tikvahpharma/
 │               │   └── messages.json
 │
-├── kara_dbt/                           # dbt project for data modeling and transformation
-│   ├── dbt_project.yml                 # Main dbt project config
-│   ├── profiles.yml                    # dbt connection config
+├── kara_dbt/                      # dbt project for data modeling and transformation
+│   ├── dbt_project.yml            # Main dbt project config
+│   ├── profiles.yml               # dbt connection config
 │   └── models/
-│       ├── staging/                    # Staging models (cleaning and structuring)
+│       ├── staging/
 │       │   └── stg_telegram_messages.sql
-│       └── marts/                      # Final star schema models
+│       └── marts/
 │           ├── dim_channels.sql
 │           ├── dim_dates.sql
 │           └── fct_messages.sql
 │
-├├── logs/                               # Log files for scraping, loading, and dbt runs
-│   ├── scrape_telegram.log             # (Large, not tracked; sample available on demand)
-│   ├── dbt.log                         # (Large, not tracked)
-│   ├── run_dbt.log                     # (Small sample log)
-│   └── load_to_postgres.log            # (Small sample log)
-
+├── logs/                          # Log files for scraping, loading, and dbt runs
+│   ├── scrape_telegram.log        # (Large, not tracked; sample available)
+│   ├── dbt.log                    # (Large, not tracked)
+│   ├── run_dbt.log                # (Small sample log)
+│   └── load_to_postgres.log       # (Small sample log)
 │
-├── scripts/                            # Core pipeline scripts
-│   ├── scrape_telegram.py              # Scrapes Telegram channels
-│   ├── load_to_postgres.py             # Loads raw JSON into PostgreSQL
-│   └── run_dbt.py                      # Runs dbt transformation
+├── scripts/                       # Core pipeline scripts
+│   ├── scrape_telegram.py         # Scrapes Telegram channels
+│   ├── load_to_postgres.py        # Loads raw JSON into PostgreSQL
+│   └── run_dbt.py                 # Runs dbt transformation
 │
-├── .env.example                        # Example environment variables
+├── .env.example                   # Example environment variables
 ├── .dockerignore
 ├── .gitignore
-├── docker-compose.yml                 # Orchestrates services (PostgreSQL + app)
-├── Dockerfile                         # Python environment container
-├── requirements.txt                   # Python dependencies
-└── README.md                          # Project overview and instructions
+├── docker-compose.yml             # Orchestrates services (PostgreSQL + app)
+├── Dockerfile                     # Python environment
+├── requirements.txt               # Python dependencies
+└── README.md                      # Project overview and instructions
 
-
-
-## 🚀 How to Run This Project
+##  How to Run This Project
 
 
 # 1. Clone repo & configure secrets
