@@ -10,9 +10,20 @@ myenv/
 # VSCode
 .vscode/
 
-# Logs
+# Ignore all .log files (general rule comes first)
 *.log
-logs/
+
+# Then ignore all logs inside logs/ (still needed to prevent other large logs)
+logs/*.log
+
+# But allow specific small log files
+!logs/run_dbt.log
+!logs/load_to_postgres.log
+
+# Optionally, explicitly ignore these two large logs
+logs/scrape_telegram.log
+logs/dbt.log
+
 
 # Secrets
 *.env
@@ -22,6 +33,17 @@ logs/
 data/**/*.jpg
 data/**/*.mp4
 data/**/*.webp
+
+# Allow sample JSONs in any samples directory
+!data/samples/
+!data/samples/**/*.json
+
+# Keep your existing raw data rules
+!data/raw/
+!data/raw/telegram_messages/
+!data/raw/telegram_messages/2025-07-10/
+!data/raw/telegram_messages/2025-07-10/lobelia4cosmetics.json
+
 
 # Dagster
 dagster_logs/
