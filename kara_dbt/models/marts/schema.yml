@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: fct_messages
+    description: "Fact table containing cleaned Telegram message data with image flags and message length"
+    columns:
+      - name: message_id
+        description: "Unique ID of each message"
+        tests:
+          - unique
+          - not_null
+
+      - name: channel
+        description: "Source Telegram channel"
+
+      - name: message_date
+        description: "Date the message was sent"
+
+      - name: message_length
+        description: "Length of the message content (text only)"
+
+      - name: has_image
+        description: "TRUE if the message has an image"
+
+  - name: dim_channels
+    description: "Dimension table for distinct channel names"
+    columns:
+      - name: channel_name
+        description: "Telegram channel name"
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_dates
+    description: "Date dimension table for time-based analysis"
+    columns:
+      - name: date
+        description: "Date key"
+        tests:
+          - not_null
+          - unique

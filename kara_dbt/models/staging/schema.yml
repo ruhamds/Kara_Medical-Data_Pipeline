@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_telegram_messages
+    description: "Staging model that standardizes raw Telegram messages for analysis"
+    columns:
+      - name: message_id
+        description: "Unique identifier of the message"
+        tests:
+          - unique
+          - not_null
+
+      - name: channel
+        description: "Name of the Telegram channel"
+
+      - name: message_date
+        description: "Timestamp when the message was sent"
+        tests:
+          - not_null
+
+      - name: message
+        description: "Raw text content of the message"
+
+      - name: media_url
+        description: "Path or URL to the media file if available"
+
+      - name: has_image
+        description: "TRUE if media is an image, else FALSE"
