@@ -50,54 +50,7 @@ This project delivers an end-to-end data pipeline for analyzing Ethiopian medica
 
 ## 📂 Project Structure
 
-Kara_Medical-Data_Pipeline/
-│
-├── data/ # Raw and sample Telegram message data
-│ └── raw/
-│ └── telegram_messages/
-│ └── 2025-07-12/
-│ ├── lobelia4cosmetics/
-│ │ └── messages_sample.json
-│ ├── tikvahpharma/
-│ │ └── messages_sample.json
-│
-├── kara_dbt/ # dbt project for modeling & transformation
-│ ├── dbt_project.yml # Main dbt project config
-│ ├── profiles.yml # DB connection config
-│ └── models/
-│ ├── staging/
-│ │ ├── stg_telegram_messages.sql
-│ │ └── schema.yml # Tests for staging models
-│ └── marts/
-│ ├── dim_channels.sql
-│ ├── dim_dates.sql
-│ ├── fct_messages.sql
-│ └── schema.yml # Tests for marts models
-│
-├── scripts/ # Core pipeline scripts
-│ ├── scrape_telegram.py # Telegram scraper (Telethon)
-│ ├── load_to_postgres.py # JSON to PostgreSQL loader
-│ └── run_dbt.py # Wrapper for dbt run
-│
-├── logs/ # Pipeline logs
-│ ├── run_dbt.log # dbt execution log (small, committed)
-│ ├── load_to_postgres.log # Loader log (small, committed)
-│ ├── scrape_telegram.log # Scraper log (large, ignored)
-│ └── dbt.log # Full dbt logs (large, ignored)
-│
-├── docs/ # GitHub Pages-ready dbt documentation
-│ ├── index.html # Entry point for dbt docs
-│ ├── catalog.json # dbt metadata
-│ ├── manifest.json # Model dependency map
-│ └── ... other dbt static assets
-│
-├── .env.example # Sample env variables (safe to share)
-├── .dockerignore
-├── .gitignore
-├── docker-compose.yml # Docker services config (DB + App)
-├── Dockerfile # Python image for pipeline
-├── requirements.txt # Python packages
-└── README.md # Project overview and usage
+<pre> <code>```text Kara_Medical-Data_Pipeline/ ├── data/ │ └── raw/ │ └── telegram_messages/ │ └── 2025-07-12/ │ ├── lobelia4cosmetics/ │ │ └── messages_sample.json │ ├── tikvahpharma/ │ │ └── messages_sample.json ├── kara_dbt/ │ ├── dbt_project.yml │ ├── profiles.yml │ └── models/ │ ├── staging/ │ │ ├── stg_telegram_messages.sql │ │ └── schema.yml │ └── marts/ │ ├── dim_channels.sql │ ├── dim_dates.sql │ ├── fct_messages.sql │ └── schema.yml ├── scripts/ │ ├── scrape_telegram.py │ ├── load_to_postgres.py │ └── run_dbt.py ├── logs/ │ ├── run_dbt.log │ ├── load_to_postgres.log │ ├── scrape_telegram.log │ └── dbt.log ├── docs/ │ ├── index.html │ ├── catalog.json │ ├── manifest.json │ └── ... ├── .env.example ├── .dockerignore ├── .gitignore ├── docker-compose.yml ├── Dockerfile ├── requirements.txt └── README.md ```</code> </pre>
 
 
 ##  How to Run This Project
