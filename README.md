@@ -50,7 +50,49 @@ This project delivers an end-to-end data pipeline for analyzing Ethiopian medica
 
 ## 📂 Project Structure
 
-<pre> <code>```text Kara_Medical-Data_Pipeline/ ├── data/ │ └── raw/ │ └── telegram_messages/ │ └── 2025-07-12/ │ ├── lobelia4cosmetics/ │ │ └── messages_sample.json │ ├── tikvahpharma/ │ │ └── messages_sample.json ├── kara_dbt/ │ ├── dbt_project.yml │ ├── profiles.yml │ └── models/ │ ├── staging/ │ │ ├── stg_telegram_messages.sql │ │ └── schema.yml │ └── marts/ │ ├── dim_channels.sql │ ├── dim_dates.sql │ ├── fct_messages.sql │ └── schema.yml ├── scripts/ │ ├── scrape_telegram.py │ ├── load_to_postgres.py │ └── run_dbt.py ├── logs/ │ ├── run_dbt.log │ ├── load_to_postgres.log │ ├── scrape_telegram.log │ └── dbt.log ├── docs/ │ ├── index.html │ ├── catalog.json │ ├── manifest.json │ └── ... ├── .env.example ├── .dockerignore ├── .gitignore ├── docker-compose.yml ├── Dockerfile ├── requirements.txt └── README.md ```</code> </pre>
+Kara_Medical-Data_Pipeline/
+├── data/
+│   └── raw/
+│       └── telegram_messages/
+│           └── 2025-07-12/
+│               ├── lobelia4cosmetics/
+│               │   └── messages_sample.json
+│               ├── tikvahpharma/
+│               │   └── messages_sample.json
+├── kara_dbt/
+│   ├── dbt_project.yml
+│   ├── profiles.yml
+│   └── models/
+│       ├── staging/
+│       │   ├── stg_telegram_messages.sql
+│       │   └── schema.yml
+│       └── marts/
+│           ├── dim_channels.sql
+│           ├── dim_dates.sql
+│           ├── fct_messages.sql
+│           └── schema.yml
+├── scripts/
+│   ├── scrape_telegram.py
+│   ├── load_to_postgres.py
+│   └── run_dbt.py
+├── logs/
+│   ├── run_dbt.log
+│   ├── load_to_postgres.log
+│   ├── scrape_telegram.log
+│   └── dbt.log
+├── docs/
+│   ├── index.html
+│   ├── catalog.json
+│   ├── manifest.json
+│   └── ...
+├── .env.example
+├── .dockerignore
+├── .gitignore
+├── docker-compose.yml
+├── Dockerfile
+├── requirements.txt
+└── README.md
+
 
 
 ##  How to Run This Project
