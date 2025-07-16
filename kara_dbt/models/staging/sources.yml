@@ -2,6 +2,8 @@ version: 2
 
 sources:
   - name: raw
-    schema: raw
+    database: telegram_db
+    schema: public     #  fix this from 'raw' to 'public'
     tables:
       - name: telegram_messages
+      - name: detected_objects

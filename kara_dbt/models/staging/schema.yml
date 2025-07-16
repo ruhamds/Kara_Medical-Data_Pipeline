@@ -26,3 +26,28 @@ models:
 
       - name: has_image
         description: "TRUE if media is an image, else FALSE"
+        
+version: 2
+
+models:
+  - name: stg_detected_objects
+    description: "YOLO object detection results from Telegram media"
+    columns:
+      - name: message_id
+        description: "ID of the message with the image"
+        tests:
+          - not_null
+
+      - name: object_label
+        description: "Object class label (e.g. scissors, remote)"
+        tests:
+          - not_null
+
+      - name: confidence
+        description: "Model confidence score"
+
+      - name: bounding_box
+        description: "Object bounding box in JSON format"
+
+      - name: media_path
+        description: "Local path to the image file"
