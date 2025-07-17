@@ -1,114 +1,131 @@
-# 🏥 Kara Medical Data Pipeline – Week 7 Challenge
+# 🩺 Kara Medical Data Pipeline
 
-This project delivers an end-to-end data pipeline for analyzing Ethiopian medical business activity using public Telegram channels.
-
-## 📦 Project Overview
-
-- **Source**: Public Telegram Channels (e.g., @lobelia4cosmetics, @tikvahpharma)
-- **Objective**: Scrape messages and media from Telegram, store as raw JSON, load into PostgreSQL, and transform using dbt
-- **Tools**:
-  - Telethon (scraping)
-  - PostgreSQL + Docker
-  - dbt (data transformation)
-  - Dagster (orchestration)
-  - YOLOv8 (image enrichment – Task 3)
-  - FastAPI (analytical API – Task 4)
+A robust, end-to-end data pipeline for extracting, transforming, enriching, and analyzing Telegram messages related to the Ethiopian medical business sector.
 
 ---
 
-## ✅ Tasks Completed
+##  Project Overview
 
-### ✅ Task 0 – Project Setup
-
-- Git repository initialized
-- Dockerized Python + PostgreSQL environment
-- `.env` secrets management and `.gitignore` used
-- `requirements.txt` for dependencies
-
-### ✅ Task 1 – Telegram Scraping and Data Collection
-
-- Scraped messages from:
-  - `@lobelia4cosmetics`
-  - `@tikvahpharma`
-- Media downloaded (images)
-- Data stored in structured folders like:
-- ✅ **Sample JSON files** included:
-- [`tikvah_sample.json`](data/raw/telegram_messages/2025-07-12/tikvahpharma/messages.json)
-- [`lobelia_sample.json`](data/raw/telegram_messages/2025-07-12/lobelia4cosmetics/messages.json)
-
-### ✅ Task 2 – Data Modeling with dbt
-
-- Loaded raw JSON into PostgreSQL (`raw.telegram_messages`)
-- Created dbt models:
-- `stg_telegram_messages` (staging)
-- `dim_channels`, `dim_dates` (dimensions)
-- `fct_messages` (fact table with 28M+ messages, 13M+ media)
-- dbt tests: `unique`, `not_null`, and custom checks
-- dbt docs generated
+This project collects raw Telegram messages from public medical-related channels, stores them in a PostgreSQL warehouse, enriches the data using YOLOv8 object detection, transforms it with dbt, and serves business insights through a FastAPI analytical API. The pipeline is fully orchestrated with Dagster.
 
 ---
 
-## 📂 Project Structure
+## 📂 Directory Structure
 
-Kara_Medical-Data_Pipeline/
-├── data/
-│   └── raw/
-│       └── telegram_messages/
-│           └── 2025-07-12/
-│               ├── lobelia4cosmetics/
-│               │   └── messages_sample.json
-│               ├── tikvahpharma/
-│               │   └── messages_sample.json
-├── kara_dbt/
-│   ├── dbt_project.yml
-│   ├── profiles.yml
-│   └── models/
-│       ├── staging/
-│       │   ├── stg_telegram_messages.sql
-│       │   └── schema.yml
-│       └── marts/
-│           ├── dim_channels.sql
-│           ├── dim_dates.sql
-│           ├── fct_messages.sql
-│           └── schema.yml
-├── scripts/
-│   ├── scrape_telegram.py
-│   ├── load_to_postgres.py
-│   └── run_dbt.py
-├── logs/
-│   ├── run_dbt.log
-│   ├── load_to_postgres.log
-│   ├── scrape_telegram.log
-│   └── dbt.log
-├── docs/
-│   ├── index.html
-│   ├── catalog.json
-│   ├── manifest.json
-│   └── ...
-├── .env.example
-├── .dockerignore
-├── .gitignore
-├── docker-compose.yml
+Kara_Medical_Data_Pipeline/
+│
+├── data/ # Raw Telegram messages & media
+├── logs/ # Log files
+├── scripts/ # Python scripts
+│ ├── scrape_telegram.py
+│ ├── load_to_postgres.py
+│ ├── run_dbt.py
+│ ├── enrich_with_yolo.py
+│ └── API/ # FastAPI app
+│ ├── main.py
+│ ├── crud.py
+│ ├── database.py
+│ ├── models.py
+│ ├── schemas.py
+├── kara_dbt/ # dbt project
+│ ├── models/
+│ │ ├── staging/
+│ │ └── marts/
+├── dagster_job.py # Dagster job and schedule
 ├── Dockerfile
+├── docker-compose.yml
 ├── requirements.txt
 └── README.md
 
 
 
-##  How to Run This Project
+---
 
+##  Tasks Breakdown
 
-# 1. Clone repo & configure secrets
-cp .env.example .env
+### ✅ Task 0: Project Setup
 
-# 2. Start containers
-docker-compose up -d
+* Dockerized environment using `docker-compose`
+* PostgreSQL service with persistent volume
+* VSCode configured for remote container development
 
-# 3. Run the Telegram scraper
-python scripts/telegram_scraper.py
+### ✅ Task 1: Data Scraping
 
-# 4. Load scraped data into Postgres
+* Collected messages from public Telegram medical channels using [Telethon]
+* Saved messages in structured JSON format
+* Downloaded associated media to a local file system
+
+### ✅ Task 2: Data Modeling with dbt
+
+* Created dbt staging models:
+  * `stg_telegram_messages`
+  * `stg_detected_objects`
+* Built final fact and dimension tables:
+  * `fct_messages`, `dim_channels`, `dim_dates`
+  * Analytical marts: `top_products`, `top_detected_objects`
+* Added dbt tests and documentation
+
+### ✅ Task 3: YOLO Enrichment
+
+* Integrated YOLOv8 for product image detection
+* Extracted top-objects per image
+* Stored enriched data in PostgreSQL and exposed via dbt models
+
+### ✅ Task 4: Analytical API with FastAPI
+
+* Built API endpoints:
+  * `GET /api/reports/top-products?limit=10`
+  * `GET /api/channels/{channel_name}/activity`
+  * `GET /api/search/messages?query=paracetamol`
+* Used SQLAlchemy ORM and Pydantic schemas
+* Served insights from dbt models
+
+### ✅ Task 5: Pipeline Orchestration with Dagster
+
+* Converted all scripts into Dagster `ops`
+* Defined a complete `medical_data_pipeline` job
+* Scheduled the pipeline to run daily at midnight
+* Developed and monitored via Dagster UI (`dagster dev`)
+
+---
+
+##  API Endpoints
+
+Visit: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) to explore and test:
+
+| Endpoint | Description |
+|----------|-------------|
+| `/api/reports/top-products?limit=10` | Most mentioned products |
+| `/api/channels/{channel_name}/activity` | Posting trends by channel |
+| `/api/search/messages?query=paracetamol` | Keyword search in messages |
+
+---
+
+##  Docker Usage
+
+```
+# Start all services
+docker-compose up --build
+
+# Stop services
+docker-compose down
+ Running the Pipeline Manually
+
+python scripts/scrape_telegram.py
 python scripts/load_to_postgres.py
-
-# 5. Run dbt transformations
 python scripts/run_dbt.py
+python scripts/enrich_with_yolo.py
+ Schedule via Dagster
+
+dagster dev
+Open Dagster UI at: http://localhost:3000
+
+ Future Improvements
+Deploy API with HTTPS and token-based auth
+
+Move media to cloud storage (e.g., AWS S3 or Azure Blob)
+
+Add alerts for pipeline failures
+
+Auto-refresh dashboard using Superset or Streamlit
+
