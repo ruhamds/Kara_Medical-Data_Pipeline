@@ -10,3 +10,28 @@ Traceback (most recent call last):
     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
 psycopg2.OperationalError: connection to server at "db" (172.19.0.2), port 5432 failed: FATAL:  the database system is starting up
 
+2025-07-15 14:57:45,223 - ERROR - Failed to load messages
+Traceback (most recent call last):
+  File "/app/scripts/load_to_postgres.py", line 97, in main
+    conn = psycopg2.connect(**DB_CONFIG)
+  File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "db" (172.19.0.2), port 5432 failed: FATAL:  the database system is not yet accepting connections
+DETAIL:  Consistent recovery state has not been yet reached.
+
+2025-07-15 15:01:58,234 - INFO - Schema and table created successfully.
+2025-07-15 15:01:58,855 - INFO - Loaded 1793 messages from data/raw/telegram_messages/2025-07-12/lobelia4cosmetics/messages.json
+2025-07-15 15:02:00,481 - INFO - Loaded 4998 messages from data/raw/telegram_messages/2025-07-12/tikvahpharma/messages.json
+2025-07-15 15:02:00,484 - INFO - Total loaded: 6791
+2025-07-15 15:33:40,323 - INFO - Schema and table created successfully.
+2025-07-15 15:33:40,789 - INFO - Loaded 1793 messages from data/raw/telegram_messages/2025-07-12/lobelia4cosmetics/messages.json
+2025-07-15 15:33:42,030 - INFO - Loaded 4998 messages from data/raw/telegram_messages/2025-07-12/tikvahpharma/messages.json
+2025-07-15 15:33:42,033 - INFO - Total loaded: 6791
+2025-07-16 18:18:32,285 - ERROR - Failed to load messages
+Traceback (most recent call last):
+  File "/app/scripts/load_to_postgres.py", line 97, in main
+    conn = psycopg2.connect(**DB_CONFIG)
+  File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "db" (172.19.0.2), port 5432 failed: FATAL:  the database system is starting up
+
