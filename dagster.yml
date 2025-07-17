@@ -1,0 +1,2 @@
+repository:
+  module: dagster_job.pipeline_job  # Adjust based on your folder structure
