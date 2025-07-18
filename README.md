@@ -1,4 +1,4 @@
-# 🩺 Kara Medical Data Pipeline
+#  Kara Medical Data Pipeline
 
 A robust, end-to-end data pipeline for extracting, transforming, enriching, and analyzing Telegram messages related to the Ethiopian medical business sector.
 
@@ -88,6 +88,19 @@ Kara_Medical_Data_Pipeline/
 * Developed and monitored via Dagster UI (`dagster dev`)
 
 ---
+## 🧩 Data Architecture Flow
+
+graph TD
+    A[Telegram Scraper (Telethon)] --> B[Raw JSON + Media files]
+    B --> C[PostgreSQL (raw.messages)]
+    C --> D[dbt Transformations]
+    D --> E[Data Marts (views): top_products, top_detected_objects]
+    E --> F[FastAPI Analytical API]
+    C --> G[YOLOv8 Image Detection]
+    G --> D
+    F --> H[API Clients (Swagger, curl)]
+
+
 
 ##  API Endpoints
 
